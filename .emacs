@@ -23,6 +23,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
+ '(speedbar-show-unknown-files t)
  '(sr-speedbar-right-side nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -42,16 +43,15 @@
 (js2r-add-keybindings-with-prefix "C-c C-m")
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 
+;; speed-settings
 (require 'sr-speedbar)
+(global-set-key [f8] 'sr-speedbar-toggle)
 (setq speedbar-show-unknown-files t) ;; show all file
 (setq speedbar-directory-unshown-regexp "^\\(CVS\\|RCS\\|SCCS\\|\\.\\.*$\\)\\'")
-
-(global-linum-mode 1)
+(setq sr-speedbar-width 30)
+(setq sr-speedbar-auto-refresh nil)
 
 (add-hook 'markdown-mode-hook 'count-words)
-
-(global-set-key [f8] 'sr-speedbar-toggle)
-(custom-set-variables '(speedbar-show-unknown-files t))
 
 (windmove-default-keybindings)
 
@@ -59,28 +59,41 @@
 (global-set-key [M-right] 'windmove-right)        ; move to right window
 (global-set-key [M-up] 'windmove-up)              ; move to upper window
 (global-set-key [M-down] 'windmove-down)          ; move to lower window
-(setq sr-speedbar-width 30)
 
-;; editor config plugin
-;;(use-package editorconfig
-;;  :ensure t
-;;  :init
-;;  (add-hook 'prog-mode-hook (editorconfig-mode 1))
-;;  (add-hook 'text-mode-hook (editorconfig-mode 1)))
+(global-linum-mode 1) ;; linum for all modes
 
 ;; attemping to use my own tabs
-(defun my-tabs-stuff ()
+(defun code-syle ()
   (setq indent-tabs-mode t)
-  (setq tab-stop-list (number-sequence 2 200 2))
-  (setq tab-width 2)
-  (setq indent-line-function 'insert-tab))
+  (setq tab-width 2))
+
+(require 'whitespace)
+
+;; tern
+(add-to-list 'load-path "/home/sridharrajs/plugins-emacs/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+
+(ac-config-default)
+(electric-pair-mode 1)
+(yas-reload-all)
+
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
 
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'markdown-mode)
 (add-hook 'js2-mode-hook 'json-mode)
-(add-hook 'js2-mode-hook 'my-tabs-stuff)
-(add-hook 'js2-mode-hook 'editorconfig-domain-specific)
+(add-hook 'js2-mode-hook 'code-style)
+(add-hook 'js2-mode-hook 'auto-complete-mode)
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
-(require 'whitespace)
+(add-hook 'prog-mode-hook (editorconfig-mode 1))
+(add-hook 'prog-mode-hook 'yas-minor-mode)
 
+;; helm ac
+(require 'ac-helm) ;; Not necessary if using ELPA package
+(global-set-key (kbd "C-:") 'ac-complete-with-helm)
+(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
