@@ -69,6 +69,19 @@
 
 (require 'whitespace)
 
+;; multiple cursor
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '(".babelrc" . json-mode))
+(add-to-list 'auto-mode-alist '(".eslintrc" . json-mode))
+(add-to-list 'auto-mode-alist '(".tern-project" . json-mode))
+
 ;; tern
 (add-to-list 'load-path "/home/sridharrajs/plugins-emacs/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
@@ -97,3 +110,15 @@
 (require 'ac-helm) ;; Not necessary if using ELPA package
 (global-set-key (kbd "C-:") 'ac-complete-with-helm)
 (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
+
+
+;; Remap some func
+(add-hook 'speedbar-reconfigure-keymaps-hook
+          '(lambda ()
+             (define-key speedbar-mode-map [S-up] 'speedbar-up-directory)
+             (define-key speedbar-mode-map [right] 'speedbar-flush-expand-line)
+             (define-key speedbar-mode-map [left] 'speedbar-contract-line)
+             (define-key speedbar-mode-map [M-up] 'speedbar-restricted-prev)
+             (define-key speedbar-mode-map [M-down] 'speedbar-restricted-next)
+             (define-key speedbar-mode-map [up] 'speedbar-prev)
+             (define-key speedbar-mode-map [down] 'speedbar-next)))
