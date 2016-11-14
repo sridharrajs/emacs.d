@@ -55,13 +55,6 @@
 
 (windmove-default-keybindings)
 
-(global-set-key [M-left] 'windmove-left)          ; move to left window
-(global-set-key [M-right] 'windmove-right)        ; move to right window
-(global-set-key [M-up] 'windmove-up)              ; move to upper window
-(global-set-key [M-down] 'windmove-down)          ; move to lower window
-
-(global-linum-mode 1) ;; linum for all modes
-
 ;; attemping to use my own tabs
 (defun code-syle ()
   (setq indent-tabs-mode t)
@@ -103,6 +96,9 @@
 (add-hook 'js2-mode-hook 'auto-complete-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
 (add-hook 'prog-mode-hook (editorconfig-mode 1))
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 
@@ -122,3 +118,20 @@
              (define-key speedbar-mode-map [M-down] 'speedbar-restricted-next)
              (define-key speedbar-mode-map [up] 'speedbar-prev)
              (define-key speedbar-mode-map [down] 'speedbar-next)))
+
+(global-set-key [M-left] 'windmove-left)          ; move to left window
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to lower window
+
+(global-set-key (kbd "M-S-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-S-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-S-<down>") 'shrink-window)
+(global-set-key (kbd "M-S-<up>") 'enlarge-window)
+
+(global-linum-mode 1) ;; linum for all modes
+
+(eval-after-load "markdown-mode"
+  '(progn
+    (define-key markdown-mode-map (kbd "M-<left>") nil)
+    (define-key markdown-mode-map (kbd "M-<right>") nil)))
