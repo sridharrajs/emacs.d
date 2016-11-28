@@ -94,6 +94,7 @@
 (add-hook 'js2-mode-hook 'json-mode)
 (add-hook 'js2-mode-hook 'code-style)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
+(add-hook 'js2-mode-hook 'electric-spacing-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -135,3 +136,7 @@
   '(progn
     (define-key markdown-mode-map (kbd "M-<left>") nil)
     (define-key markdown-mode-map (kbd "M-<right>") nil)))
+
+(require 'flycheck)
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
