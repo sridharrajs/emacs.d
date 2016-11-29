@@ -137,6 +137,8 @@
     (define-key markdown-mode-map (kbd "M-<left>") nil)
     (define-key markdown-mode-map (kbd "M-<right>") nil)))
 
+(require 'duplicate-thing)
+(global-set-key (kbd "M-c") 'duplicate-thing)
 (require 'flycheck)
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
