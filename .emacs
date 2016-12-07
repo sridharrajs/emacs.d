@@ -57,8 +57,7 @@
 
 ;; attemping to use my own tabs
 (defun code-syle ()
-  (setq indent-tabs-mode t)
-  (setq tab-width 2))
+  (setq indent-tabs-mode nil))
 
 (require 'whitespace)
 
@@ -95,7 +94,26 @@
 (add-hook 'js2-mode-hook 'code-style)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
 (add-hook 'js2-mode-hook 'electric-spacing-mode)
+(add-hook 'js2-mode-hook 'whitespace-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+
+(defun untabify-buffer ()
+  "Untabify current buffer"
+  (interactive)
+  (untabify (point-min) (point-max)))
+ 
+(defun progmodes-hooks ()
+  "Hooks for programming modes"
+  (yas/minor-mode-on)
+  (add-hook 'before-save-hook 'progmodes-write-hooks))
+ 
+(defun progmodes-write-hooks ()
+  "Hooks which run on file write for programming modes"
+  (prog1 nil
+    (set-buffer-file-coding-system 'utf-8-unix)
+    (untabify-buffer)))
+
+(add-hook 'js2-mode-hook 'progmodes-hooks)
 
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
