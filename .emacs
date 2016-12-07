@@ -131,6 +131,7 @@
 (global-set-key (kbd "M-S-<up>") 'enlarge-window)
 
 (global-linum-mode 1) ;; linum for all modes
+(projectile-global-mode)
 
 (eval-after-load "markdown-mode"
   '(progn
