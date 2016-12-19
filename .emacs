@@ -23,6 +23,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
+ '(js-indent-level 2)
  '(speedbar-show-unknown-files t)
  '(sr-speedbar-right-side nil))
 (custom-set-faces
@@ -57,6 +58,7 @@
 
 ;; attemping to use my own tabs
 (defun code-syle ()
+  (setq-default js2-basic-offset 2)
   (setq indent-tabs-mode nil))
 
 (require 'whitespace)
@@ -148,8 +150,13 @@
 (global-set-key (kbd "M-S-<up>") 'enlarge-window)
 
 (global-linum-mode 1) ;; linum for all modes
-(projectile-global-mode)
 
+;;projectile configurations
+(projectile-global-mode)
+(setq projectile-require-project-root nil)
+(setq projectile-enable-caching t)
+(setq projectile-find-file (kbd "C-S n"))
+  
 (eval-after-load "markdown-mode"
   '(progn
     (define-key markdown-mode-map (kbd "M-<left>") nil)
