@@ -24,6 +24,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
  '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(js2-include-node-externs t)
  '(speedbar-show-unknown-files t)
  '(sr-speedbar-right-side nil))
 (custom-set-faces
@@ -43,6 +45,13 @@
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-c C-m")
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+
+(require 'electric-operator)
+
+(electric-operator-add-rules-for-mode 'python-mode
+  (cons "->" " -> ")
+  (cons "=>" " => ")
+)
 
 ;; speed-settings
 (require 'sr-speedbar)
@@ -95,7 +104,7 @@
 (add-hook 'js2-mode-hook 'json-mode)
 (add-hook 'js2-mode-hook 'code-style)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
-(add-hook 'js2-mode-hook 'electric-spacing-mode)
+(add-hook 'js2-mode-hook 'electric-operator-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 (defun untabify-buffer ()
