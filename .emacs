@@ -46,8 +46,8 @@
 (js2r-add-keybindings-with-prefix "C-c C-m")
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 
+;; electric operator
 (require 'electric-operator)
-
 (electric-operator-add-rules-for-mode 'python-mode
   (cons "->" " -> ")
   (cons "=>" " => ")
@@ -92,6 +92,7 @@
 (ac-config-default)
 (electric-pair-mode 1)
 (yas-reload-all)
+(setq-default mode-require-final-newline nil)
 
 (eval-after-load 'tern
   '(progn
@@ -111,12 +112,12 @@
   "Untabify current buffer"
   (interactive)
   (untabify (point-min) (point-max)))
- 
+
 (defun progmodes-hooks ()
   "Hooks for programming modes"
   (yas/minor-mode-on)
   (add-hook 'before-save-hook 'progmodes-write-hooks))
- 
+
 (defun progmodes-write-hooks ()
   "Hooks which run on file write for programming modes"
   (prog1 nil
@@ -158,21 +159,36 @@
 (global-set-key (kbd "M-S-<down>") 'shrink-window)
 (global-set-key (kbd "M-S-<up>") 'enlarge-window)
 
-(global-linum-mode 1) ;; linum for all modes
+;; global modes
+(global-linum-mode 1) 
+(delete-selection-mode 1)
 
 ;;projectile configurations
 (projectile-global-mode)
 (setq projectile-require-project-root nil)
 (setq projectile-enable-caching t)
 (setq projectile-find-file (kbd "C-S n"))
-  
+
 (eval-after-load "markdown-mode"
   '(progn
-    (define-key markdown-mode-map (kbd "M-<left>") nil)
-    (define-key markdown-mode-map (kbd "M-<right>") nil)))
+     (define-key markdown-mode-map (kbd "M-<left>") nil)
+     (define-key markdown-mode-map (kbd "M-<right>") nil)))
 
 (require 'duplicate-thing)
 (global-set-key (kbd "M-c") 'duplicate-thing)
 (require 'flycheck)
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(defun search-selection (beg end)
+  "search for selected text"
+  (interactive "r")
+  (let (
+        (selection (buffer-substring-no-properties beg end))
+        )
+    (deactivate-mark)
+    (isearch-mode t nil nil nil)
+    (isearch-yank-string selection)
+    )
+  )
+(define-key global-map (kbd "<C-f3>") 'search-selection)
