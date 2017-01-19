@@ -51,7 +51,9 @@
 (electric-operator-add-rules-for-mode 'python-mode
   (cons "->" " -> ")
   (cons "=>" " => ")
-)
+  )
+
+(global-set-key (kbd "C-;") 'er/expand-region)
 
 ;; speed-settings
 (require 'sr-speedbar)
@@ -175,7 +177,7 @@
      (define-key markdown-mode-map (kbd "M-<right>") nil)))
 
 (require 'duplicate-thing)
-(global-set-key (kbd "M-c") 'duplicate-thing)
+(global-set-key (kbd "C-d") 'duplicate-thing)
 (require 'flycheck)
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
