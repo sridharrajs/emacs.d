@@ -49,9 +49,8 @@
 ;; electric operator
 (require 'electric-operator)
 (electric-operator-add-rules-for-mode 'python-mode
-  (cons "->" " -> ")
-  (cons "=>" " => ")
-  )
+    (cons "->" " -> ")
+    (cons "=>" " => "))
 
 (global-set-key (kbd "C-;") 'er/expand-region)
 
@@ -108,6 +107,7 @@
 (add-hook 'js2-mode-hook 'code-style)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
 (add-hook 'js2-mode-hook 'electric-operator-mode)
+(add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 (defun untabify-buffer ()
@@ -139,7 +139,6 @@
 (global-set-key (kbd "C-:") 'ac-complete-with-helm)
 (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
 
-
 ;; Remap some func
 (add-hook 'speedbar-reconfigure-keymaps-hook
           '(lambda ()
@@ -169,7 +168,6 @@
 (projectile-global-mode)
 (setq projectile-require-project-root nil)
 (setq projectile-enable-caching t)
-(setq projectile-find-file (kbd "C-S n"))
 
 (eval-after-load "markdown-mode"
   '(progn
@@ -194,3 +192,10 @@
     )
   )
 (define-key global-map (kbd "<C-f3>") 'search-selection)
+
+(global-set-key (kbd "C-c <right>") 'hs-show-block)
+(global-set-key (kbd "C-c <left>") 'hs-hide-block)
+(global-set-key (kbd "C-c <down>") 'hs-show-all)
+(global-set-key (kbd "C-c <up>") 'hs-hide-all)
+(global-set-key (kbd "C-c l") 'hs-hide-level)
+
