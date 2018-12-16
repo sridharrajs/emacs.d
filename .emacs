@@ -86,6 +86,15 @@
 (add-to-list 'auto-mode-alist '(".eslintrc" . json-mode))
 (add-to-list 'auto-mode-alist '(".tern-project" . json-mode))
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.blade.\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(setq web-mode-engines-alist
+  '(("php"    . "\\.phtml\\'")
+    ("blade"  . "\\.blade\\."))
+)
+
 ;; tern
 (add-to-list 'load-path "/home/sridharrajs/plugins-emacs/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
@@ -109,6 +118,8 @@
 (add-hook 'js2-mode-hook 'electric-operator-mode)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+
+(add-hook 'php-mode-hook 'web-mode)
 
 (defun untabify-buffer ()
   "Untabify current buffer"
