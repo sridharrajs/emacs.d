@@ -12,3 +12,6 @@
 
 ;; set Ctrl + S for saving the file
 (global-set-key (kbd "C-s") 'save-buffer) 
+
+;; reload the buffer when the file content changes on the disk
+(global-auto-revert-mode t)
