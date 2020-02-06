@@ -3,3 +3,21 @@
 
 # Packaging
 .cask
+
+# session
+session.*
+
+
+/.mc-lists.el
+
+# emacs meta
+auto-save-list
+
+# projectile
+projectile.*
+projectile-*
+
+# folders
+eshell
+semanticdb
+elpa
