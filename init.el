@@ -12,6 +12,7 @@
 ;; Load config for specific purpose
 
 (require 'init-tweak-defaults)
+(require 'init-default-modes)
 (require 'init-sublime)
 (require 'init-explorer-settings)
 (require 'init-eshell)
