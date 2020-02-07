@@ -8,6 +8,8 @@
 session.*
 
 
+network-security.data
+
 /.mc-lists.el
 
 # emacs meta
