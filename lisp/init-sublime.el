@@ -2,7 +2,7 @@
 ;; shortcuts inspired from sublime
 
 (require 'duplicate-thing) ;; for duplicating the current line, below
-(global-set-key (kbd "C-d") 'duplicate-thing)
+(global-set-key (kbd "C-S-d") 'duplicate-thing)
 
 (defun move-line-up ()
   (interactive)
