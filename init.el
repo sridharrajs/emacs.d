@@ -26,4 +26,6 @@
 (global-set-key [M-up] 'windmove-up)              ; move to upper window
 (global-set-key [M-down] 'windmove-down)          ; move to lower window
 
+;; load intellij darkular theme
+;; you can install from https://github.com/fourier/idea-darkula-theme
 (load-theme 'idea-darkula t)
