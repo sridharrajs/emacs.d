@@ -11,4 +11,6 @@
 ;; always show line numbers
 (global-linum-mode 1)
 
+(delete-selection-mode 1)
+
 (provide 'init-default-modes)
