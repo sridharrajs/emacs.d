@@ -12,5 +12,8 @@
 (global-linum-mode 1)
 
 (delete-selection-mode 1)
+(aggressive-indent-mode 1) ;; indent things as you type
+
+(xclip-mode 1) ;; play nice with system's clipboard when opening in terminal
 
 (provide 'init-default-modes)

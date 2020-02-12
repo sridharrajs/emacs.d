@@ -18,13 +18,7 @@
 (require 'init-eshell)
 (require 'init-js)
 (require 'init-python)
-(require 'init-json)
 (require 'init-markdown)
-
-(global-set-key [M-left] 'windmove-left)          ; move to left window
-(global-set-key [M-right] 'windmove-right)        ; move to right window
-(global-set-key [M-up] 'windmove-up)              ; move to upper window
-(global-set-key [M-down] 'windmove-down)          ; move to lower window
 
 ;; load intellij darkular theme
 ;; you can install from https://github.com/fourier/idea-darkula-theme

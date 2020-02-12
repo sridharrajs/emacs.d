@@ -2,6 +2,8 @@
 ;; eshell configuration
 
 
+(global-set-key (kbd "<f12>") 'eshell)
+
 ;;;; clear shell in eshell
 (defun eshell-clear-buffer ()
   "Clear terminal"

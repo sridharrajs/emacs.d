@@ -14,6 +14,9 @@
 ;; remove the directions
 (menu-bar-mode -1)
 
+
+(setq x-select-enable-clipboard t)
+
 ;; disable tool-bar-mode, only if available
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode 0))
