@@ -14,8 +14,10 @@
 ;; remove the directions
 (menu-bar-mode -1)
 
-
 (setq x-select-enable-clipboard t)
+
+;; life is too short to type out yes and no ;)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; disable tool-bar-mode, only if available
 (if (fboundp 'tool-bar-mode)
