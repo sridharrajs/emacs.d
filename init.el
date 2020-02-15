@@ -1,3 +1,10 @@
+;;; init.el --- Summary
+;;; Commentary:
+
+;; Root file which bootstraps my Emacs configurations
+
+;;; Code:
+
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -25,6 +32,7 @@
 (require 'init-git)
 (require 'init-js)
 (require 'init-markdown)
+(require 'init-nginx)
 (require 'init-osx)
 (require 'init-projectile)
 (require 'init-python)
@@ -35,6 +43,9 @@
 ;; load intellij darkular theme
 ;; you can install from https://github.com/fourier/idea-darkula-theme
 (load-theme 'idea-darkula t)
+
+;;; init.el ends here
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
