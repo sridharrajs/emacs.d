@@ -1,7 +1,7 @@
 ;;; init.el --- Summary
-;;; Commentary:
 
-;; Root file which bootstraps my Emacs configurations
+;;; Commentary:
+;;; Base configuration for my Emacs
 
 ;;; Code:
 
@@ -31,6 +31,7 @@
 (require 'init-flycheck)
 (require 'init-git)
 (require 'init-js)
+(require 'init-json)
 (require 'init-markdown)
 (require 'init-nginx)
 (require 'init-osx)
@@ -44,8 +45,6 @@
 ;; you can install from https://github.com/fourier/idea-darkula-theme
 (load-theme 'idea-darkula t)
 
-;;; init.el ends here
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ibuffer-projectile projectile company flycheck yaml-mode gitignore-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing autopair aggressive-indent))))
+    (company-tern tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company flycheck yaml-mode gitignore-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing autopair aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

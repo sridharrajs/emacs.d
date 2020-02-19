@@ -1,5 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; load the default modes
+;;; init-default-mode --- Summary
+
+;;; Commentary:
+;;; Load the default modes
+
+;;; Code:
 
 ;; for autocompletion of (), {} and so on.
 (autopair-mode 1)
@@ -17,3 +21,4 @@
 (xclip-mode 1) ;; play nice with system's clipboard when opening in terminal
 
 (provide 'init-default-modes)
+;;; init-default-modes ends here

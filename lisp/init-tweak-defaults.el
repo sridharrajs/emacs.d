@@ -1,6 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Tweak the default emacs configuration
-;; remove cruft add line number and basic functionality
+;;; init-yaml --- Summary
+
+;;; Commentary:
+;;; Tweak the default Emacs configuration
+;;; remove all the cruft add line number and basic functionality
+
+;;; Code:
 
 ;; hide fundamental welcome mode
 (setq inhibit-startup-screen t)
@@ -24,3 +28,4 @@
     (tool-bar-mode 0))
 
 (provide 'init-tweak-defaults)
+;;; init-tweak-defaults ends here

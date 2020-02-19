@@ -1,5 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; shortcuts inspired from sublime
+;;; init-sublime --- Summary
+
+;;; Commentary:
+;;; Shortcuts inspired from sublime
+
+;;; Code:
 
 (require 'duplicate-thing) ;; for duplicating the current line, below
 (global-set-key (kbd "C-S-d") 'duplicate-thing)
@@ -18,6 +22,6 @@
 
 (global-set-key [(control shift down)] 'move-line-down)
 (global-set-key [(control shift up)] 'move-line-up)
-
+     
 (provide 'init-sublime)
-;; end
+;;; init-sublime ends here

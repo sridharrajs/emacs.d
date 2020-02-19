@@ -23,3 +23,5 @@ projectile-*
 eshell
 semanticdb
 elpa
+transient
+org-clock-save.el

@@ -1,5 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; projectile configuration
+;;; init-projectile --- Summary
+
+;;; Commentary:
+;;; Configuration for projectile
+
+;;; Code:
 
 (projectile-mode +1)
 
@@ -10,3 +14,4 @@
 (require 'ibuffer-projectile)
 
 (provide 'init-projectile)
+;;; init-projectile ends here

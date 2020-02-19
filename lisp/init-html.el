@@ -1,5 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; HTML configurations
+;;; init-html --- Summary
+
+;;; Commentary:
+;;; Configuration for HTML
+
+;;; Code:
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . sgml-mode))
 
@@ -7,3 +11,4 @@
 (add-hook 'sgml-mode-hook  'emmet-mode)
 
 (provide 'init-html)
+;;; init-html ends here

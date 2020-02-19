@@ -1,7 +1,7 @@
 ;;; init-global-set-key --- Summary
-;;; Commentary:
 
-;; window navigation configurations
+;;; Commentary:
+;;; window navigation configurations
 
 ;;; Code:
 

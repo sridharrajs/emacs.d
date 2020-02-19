@@ -1,6 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Setting for navigation explorer
+;;; init-explorer-settings --- Summary
 
+;;; Commentary:
+;;; Setting for navigation explorer
+
+;;; Code:
 
 ;; speed-settings
 (require 'sr-speedbar)
@@ -14,3 +17,4 @@
 (setq sr-speedbar-right-side nil) ;; load the explorer on the left side
 
 (provide 'init-explorer-settings)
+;;; init-explorer-settings ends here
