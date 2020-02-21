@@ -39,6 +39,7 @@
 (require 'init-python)
 (require 'init-sublime)
 (require 'init-utils)
+(require 'init-xml)
 (require 'init-yaml)
 
 ;; load intellij darkular theme
