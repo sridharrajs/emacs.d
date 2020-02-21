@@ -5,6 +5,10 @@
 
 ;;; Code:
 
+
+;;; we use 'eshell' instead of 'term'-mode because
+;;; eshell places nice with emacs respecting all the keymapping
+
 (global-set-key (kbd "<f12>") 'eshell)
 
 ;;;; clear shell in eshell
