@@ -22,7 +22,6 @@
 ;; Load config for specific purpose
 
 (require 'init-tweak-defaults)
-(require 'init-default-modes)
 (require 'init-dotenv)
 (require 'init-company)
 (require 'init-editorconfig)
@@ -30,6 +29,8 @@
 (require 'init-eshell)
 (require 'init-flycheck)
 (require 'init-git)
+(require 'init-global-modes)
+(require 'init-global-set-key)
 (require 'init-js)
 (require 'init-json)
 (require 'init-markdown)

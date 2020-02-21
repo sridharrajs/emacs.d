@@ -1,7 +1,7 @@
-;;; init-default-mode --- Summary
+;;; init-global-mode --- Summary
 
 ;;; Commentary:
-;;; Load the default modes
+;;; Load the global modes for all Emacs session
 
 ;;; Code:
 
@@ -20,5 +20,5 @@
 
 (xclip-mode 1) ;; play nice with system's clipboard when opening in terminal
 
-(provide 'init-default-modes)
-;;; init-default-modes ends here
+(provide 'init-global-modes)
+;;; init-global-modes ends here
