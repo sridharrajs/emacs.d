@@ -37,6 +37,7 @@
 (require 'init-nginx)
 (require 'init-osx)
 (require 'init-projectile)
+(require 'init-pug)
 (require 'init-python)
 (require 'init-sublime)
 (require 'init-utils)

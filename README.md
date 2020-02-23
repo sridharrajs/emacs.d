@@ -9,13 +9,12 @@ A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 |`/lisp`| List of configurations for specific purpose |
 |`/snippets`| List of snippets for the programming modes |
 
-
 # Keymapping
 
 | Notation | Name | 	Key |
 |----------|---------|------|
 | M | Meta | Alt |
-| C | Control |	Ctrl
+| C | Control |	Ctrl |
 | S | Shift | Shift |
 | SPC | Space | Space |
 
@@ -27,6 +26,17 @@ A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 | Name | Command |
 |------|---------|
 | Switch to `eshell` | `F12` |
+
+## Directory
+
+| Name | Command |
+|------|---------|
+| Open a directory | `C-x` + `d` |
+| Open a file | `C-x` + `f` |
+| Delete a file - marking| `d` |
+| Confirm deletion | `x` | 
+| Rename a file | `R` |
+
 
 
 ### Cut-Copy-Paste

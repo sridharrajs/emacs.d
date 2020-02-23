@@ -12,6 +12,9 @@
 ;; dont create <filename>~ backup files
 (setq make-backup-files nil)
 
+;; file completion without case-insentive
+(setq read-file-name-completion-ignore-case t)
+
 ;; reload the buffer when the file content changes on the disk
 (global-auto-revert-mode t)
 
