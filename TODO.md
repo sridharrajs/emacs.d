@@ -4,6 +4,7 @@
 
 * F5 for eval-buffer
 * Always open emacs in expanded mode
+* install the missing packages when refreshing from github
 
 ## Navigation
 
@@ -21,6 +22,8 @@
 ## edit
 
 * C-x for cutting the entire line without selection.
+* C-C for copying the entire line without selection.
+* Duplicate cursor
 
 ## Modes
 
@@ -30,4 +33,4 @@
 
 ## Markdown-mode
 
-* wordcut at the bottom
+* wordcount at the bottom
