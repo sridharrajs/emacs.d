@@ -5,16 +5,16 @@
 
 ;;; Code:
 
-(defun indent-buffer ()
+(defun indent-json-buffer ()
   (interactive)
   (mark-whole-buffer)
   (json-pretty-print-buffer)
-  (message "formatted"))
+  (message "formatted JSON"))
 
 (eval-after-load "json-mode"
   '(progn
      (global-set-key (kbd "C-M-l") nil) ;; unset the global key
-     (define-key json-mode-map (kbd "C-M-l") 'indent-buffer)))
+     (define-key json-mode-map (kbd "C-M-l") 'indent-json-buffer)))
 
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 

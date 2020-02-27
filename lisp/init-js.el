@@ -20,16 +20,16 @@
 
 (setq js2-highlight-level 3)
 
-(defun indent-buffer ()
+(defun indent-js-buffer ()
   (interactive)
   (mark-whole-buffer)
   (indent-for-tab-command)
-  (message "formatted"))
+  (message "formatted js"))
 
 (eval-after-load "js2-mode"
   '(progn
      (global-set-key (kbd "C-M-l") nil) ;; unset the global key
-     (define-key js2-mode-map (kbd "C-M-l") 'indent-buffer)))
+     (define-key js2-mode-map (kbd "C-M-l") 'indent-js-buffer)))
 
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 (add-hook 'js2-mode-hook  'autopair-mode)
