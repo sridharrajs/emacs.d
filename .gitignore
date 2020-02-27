@@ -1,5 +1,6 @@
-# Compiled
+\# Compiled
 *.elc
+elpy
 
 # Packaging
 .cask
