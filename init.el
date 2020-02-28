@@ -31,6 +31,8 @@
 (require 'init-git)
 (require 'init-global-modes)
 (require 'init-global-set-key)
+(require 'init-html)
+(require 'init-ivy)
 (require 'init-js)
 (require 'init-json)
 (require 'init-markdown)
