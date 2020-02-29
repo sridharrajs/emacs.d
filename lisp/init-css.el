@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'css-mode-hook  'autopair-mode)
 

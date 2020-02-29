@@ -12,6 +12,7 @@ session.*
 network-security.data
 
 /.mc-lists.el
+ido.last
 
 # emacs meta
 auto-save-list
