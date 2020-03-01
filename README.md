@@ -26,6 +26,7 @@ A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 | Name | Command |
 |------|---------|
 | Switch to `eshell` | `F12` |
+| Eval command | `M:` eg `M: major-mode`|
 
 ## Directory
 
