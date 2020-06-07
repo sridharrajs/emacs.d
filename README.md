@@ -2,6 +2,10 @@
 
 A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 
+## Opinions
+
+* Use `flycheck` instead of `flymake` - [Flycheck versus Flymake](https://www.flycheck.org/en/latest/user/flycheck-versus-flymake.html)
+
 ## Configurations
 
 | Name | Description |
@@ -26,6 +30,7 @@ A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 | Name | Command |
 |------|---------|
 | Switch to `eshell` | `F12` |
+| Eval command | `M:` eg `M: major-mode`|
 
 ## Directory
 

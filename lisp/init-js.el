@@ -34,10 +34,17 @@
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 (add-hook 'js2-mode-hook  'autopair-mode)
 (add-hook 'js2-mode-hook 'electric-operator-mode)
+(add-hook 'js2-mode-hook 'electric-spacing-mode)
 (add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-mode-hook 'tern-auto-complete)
 (add-hook 'js2-mode-hook 'ac-complete)
 (add-hook 'js2-mode-hook 'company-tern)
+
+;; for jsx settings
+(add-hook 'js2-jsx-mode-hook  'autopair-mode)
+(add-hook 'js2-jsx-mode-hook 'electric-operator-mode)
+(add-hook 'js2-jsx-mode-hook 'electric-spacing-mode)
+(add-hook 'js2-jsx-mode-hook 'electric-pair-mode)
 
 (provide 'init-js)
 ;;; init-js ends here
