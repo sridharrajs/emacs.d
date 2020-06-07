@@ -5,12 +5,11 @@
 
 ;;; Code:
 
-(require 'package) ;; You might already have this line
+(require 'package)
+;; use melpa for installing new packages
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
+(package-initialize)
 
 ;; determine the OS
 (defconst *is-osx* (eq system-type 'darwin))
@@ -58,7 +57,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (scss-mode php-mode markdown-mode company-tern tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company flycheck yaml-mode gitignore-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing autopair aggressive-indent))))
+    (whole-line-or-region scss-mode php-mode markdown-mode company-tern tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company flycheck yaml-mode gitignore-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing autopair aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
