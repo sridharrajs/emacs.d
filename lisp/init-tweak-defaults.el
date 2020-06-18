@@ -9,6 +9,9 @@
 ;; hide fundamental welcome mode
 (setq inhibit-startup-screen t)
 
+;; maximize emacs on window startup
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
 ;; dont create <filename>~ backup files
 (setq make-backup-files nil)
 

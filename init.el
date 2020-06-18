@@ -19,7 +19,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load config for specific purpose
-
 (require 'init-tweak-defaults)
 (require 'init-dotenv)
 (require 'init-company)
@@ -43,6 +42,7 @@
 (require 'init-python)
 (require 'init-sublime)
 (require 'init-utils)
+(require 'init-window)
 (require 'init-xml)
 (require 'init-yaml)
 

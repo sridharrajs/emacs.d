@@ -3,7 +3,6 @@
 ## General
 
 * F5 for eval-buffer
-* Always open emacs in expanded mode
 * install the missing packages when refreshing from github
 * Bookmarking items
 
