@@ -21,6 +21,7 @@ A repo for [emacs](https://www.gnu.org/software/emacs/) configuration.
 | C | Control |	Ctrl |
 | S | Shift | Shift |
 | SPC | Space | Space |
+|tab| TAB| Tab | 
 
 
 ## Shortcuts

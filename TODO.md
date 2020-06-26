@@ -31,10 +31,6 @@
 * expand and collapse a different shortcut
 * icons for different files. json, jsrc, babelrca and so on
 
-## emmet-mode
-
-* Replace c-j with <tab> for completion
-
 ## edit
 
 * C-x for cutting the entire line without selection.
