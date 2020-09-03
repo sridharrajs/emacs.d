@@ -13,6 +13,7 @@
 
 (delete-selection-mode 1)
 (aggressive-indent-mode 1) ;; indent things as you type
+(electric-pair-mode 1)
 
 (xclip-mode 1) ;; play nice with system's clipboard when opening in terminal
 
