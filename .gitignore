@@ -13,8 +13,11 @@ network-security.data
 
 /.mc-lists.el
 ido.last
+url/
 
 # emacs meta
+/#*.*
+*#.*
 auto-save-list
 
 # projectile
