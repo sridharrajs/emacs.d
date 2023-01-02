@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(setq package-list '(graphql-mode whole-line-or-region scss-mode php-mode markdown-mode tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company yaml-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing aggressive-indent nginx-mode use-package))
+(setq package-list '(graphql-mode whole-line-or-region scss-mode php-mode markdown-mode tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company yaml-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing aggressive-indent nginx-mode use-package cuda-mode))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
