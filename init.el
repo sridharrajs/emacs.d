@@ -5,11 +5,23 @@
 
 ;;; Code:
 
+(setq package-list '(graphql-mode whole-line-or-region scss-mode php-mode markdown-mode tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company yaml-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing aggressive-indent nginx-mode use-package cuda-mode))
+
 (require 'package)
-;; use melpa for installing new packages
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing dependencies from repos
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (print "installing the missing package")
+    (print package)                                                                                                                                                                                                         
+    (package-install package)))
 
 ;; determine the OS
 (defconst *is-osx* (eq system-type 'darwin))
@@ -25,7 +37,6 @@
 (require 'init-editorconfig)
 (require 'init-explorer-settings)
 (require 'init-eshell)
-(require 'init-flycheck)
 (require 'init-git)
 (require 'init-global-modes)
 (require 'init-global-set-key)
@@ -50,15 +61,13 @@
 ;; load intellij darkular theme
 ;; you can install from https://github.com/fourier/idea-darkula-theme
 (load-theme 'idea-darkula t)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (graphql-mode whole-line-or-region scss-mode php-mode markdown-mode company-tern tern-auto-complete tern-context-coloring tern ibuffer-projectile projectile company flycheck yaml-mode gitignore-mode editorconfig dotenv-mode xclip transient sr-speedbar multiple-cursors js2-mode idea-darkula-theme emmet-mode electric-operator duplicate-thing autopair aggressive-indent))))
+   '(cuda-mode company-nginx use-package nginx-mode aggressive-indent duplicate-thing electric-operator emmet-mode idea-darkula-theme js2-mode multiple-cursors sr-speedbar xclip dotenv-mode editorconfig yaml-mode company ibuffer-projectile tern-context-coloring tern-auto-complete markdown-mode php-mode scss-mode whole-line-or-region graphql-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
